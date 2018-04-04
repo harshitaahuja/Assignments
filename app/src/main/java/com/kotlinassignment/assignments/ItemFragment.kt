@@ -42,11 +42,11 @@ class ItemFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         if (arguments != null) {
-            mColumnCount = arguments.getInt(ARG_COLUMN_COUNT)
+            mColumnCount = arguments?.getInt(ARG_COLUMN_COUNT)?: 0
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_item_list, container, false)
 
