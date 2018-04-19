@@ -5,9 +5,11 @@ import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.kotlinassignment.assignments.dummy.DummyContent
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,7 +17,29 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() , ItemFragment.OnListFragmentInteractionListener {
     override fun onListFragmentInteraction(item: DummyContent.DummyItem) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        // Initialize a new instance of
+        val builder = AlertDialog.Builder(this@MainActivity)
+
+        // Display a message on alert dialog
+        builder.setMessage("Go to detail view")
+
+        // Set a positive button and its click listener on alert dialog
+        builder.setPositiveButton("YES"){dialog, which ->
+            // Do something when user press the positive button
+            Toast.makeText(applicationContext,"Ok,you tapped "+ item.details,Toast.LENGTH_SHORT).show()
+
+        }
+
+        // Display a negative button on alert dialog
+        builder.setNegativeButton("No"){dialog,which ->
+           // Toast.makeText(applicationContext,"You are not agree.",Toast.LENGTH_SHORT).show()
+        }
+
+        // Finally, make the alert dialog using builder
+        val dialog: AlertDialog = builder.create()
+
+        // Display the alert dialog on app interface
+        dialog.show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
