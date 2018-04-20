@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Assignment3</string>
+    <string name="fragment_first_message">Welcome to fragment A</string>
+    <string name="fragment_second_message">Hello Fragment Second</string>
+    <string name="activity_to_frag">Activity to Fragment</string>
+    <string name="add_numbers">Add Numbers in activity</string>
+    <string name="frag_to_frag">Fragment A to Fragment B</string>
+</resources>
